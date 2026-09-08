@@ -1,0 +1,10 @@
+{
+  "name": "hams-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "موقع تعريفي - همس الثبيتي مصممة جرافيك",
+  "scripts": {
+    "dev": "npx live-server --port=5500",
+    "deploy": "npx vercel --prod"
+  }
+}

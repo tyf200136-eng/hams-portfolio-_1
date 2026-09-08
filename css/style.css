@@ -1,0 +1,426 @@
+/* ===========================================================
+   Hams Al Thobiti — Graphic Designer Portfolio
+   Tokens
+=========================================================== */
+:root{
+  --bg-0: #0d0417;
+  --bg-1: #170a29;
+  --bg-2: #250f3d;
+  --accent-pink: #ec3d9a;
+  --accent-purple: #8b3df0;
+  --accent-purple-soft: #4b2178;
+  --text-0: #f5eefb;
+  --text-1: #cbb9de;
+  --text-2: #93819f;
+  --border: rgba(255,255,255,0.09);
+  --radius-lg: 28px;
+  --radius-md: 18px;
+  --radius-pill: 999px;
+  --font-display: "Cairo", "Tajawal", sans-serif;
+  --font-body: "Tajawal", "Cairo", sans-serif;
+  --container: 1180px;
+}
+
+*{ box-sizing: border-box; }
+html{ scroll-behavior: smooth; }
+
+body{
+  margin:0;
+  background: radial-gradient(120% 90% at 50% -10%, var(--bg-2) 0%, var(--bg-1) 45%, var(--bg-0) 100%);
+  color: var(--text-0);
+  font-family: var(--font-body);
+  line-height: 1.65;
+  overflow-x: hidden;
+  position: relative;
+}
+
+@media (prefers-reduced-motion: reduce){
+  html{ scroll-behavior: auto; }
+  *{ animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
+}
+
+a{ color: inherit; text-decoration: none; }
+h1,h2,h3,h4{ font-family: var(--font-display); margin: 0; }
+p{ margin: 0; }
+ul{ list-style: none; margin: 0; padding: 0; }
+img,svg{ display:block; max-width: 100%; }
+
+.container{
+  width: 100%;
+  max-width: var(--container);
+  margin-inline: auto;
+  padding-inline: 24px;
+}
+
+:focus-visible{
+  outline: 2px solid var(--accent-pink);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Ambient glow */
+.glow{
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(90px);
+  pointer-events: none;
+  z-index: 0;
+}
+.glow-1{
+  width: 480px; height: 480px;
+  background: radial-gradient(circle, rgba(139,61,240,0.35), transparent 70%);
+  top: -120px; left: -140px;
+}
+.glow-2{
+  width: 520px; height: 520px;
+  background: radial-gradient(circle, rgba(236,61,154,0.22), transparent 70%);
+  bottom: -160px; right: -160px;
+}
+
+/* ===========================================================
+   Header
+=========================================================== */
+.site-header{
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  backdrop-filter: blur(14px);
+  background: rgba(13,4,23,0.55);
+  border-bottom: 1px solid var(--border);
+}
+.header-inner{
+  display:flex;
+  align-items:center;
+  justify-content: space-between;
+  padding-block: 16px;
+}
+.brand{ display:flex; align-items:center; }
+.nav{ display:flex; gap: 32px; font-size: 0.95rem; color: var(--text-1); }
+.nav a{ transition: color .2s ease; }
+.nav a:hover{ color: var(--text-0); }
+
+.nav-toggle{
+  display:none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 34px; height: 34px;
+  background: none; border: none; cursor: pointer;
+}
+.nav-toggle span{
+  display:block; height: 2px; width: 100%;
+  background: var(--text-0); border-radius: 2px;
+}
+
+/* ===========================================================
+   Hero
+=========================================================== */
+.hero{
+  position: relative;
+  z-index: 1;
+  padding-top: 64px;
+  padding-bottom: 40px;
+  text-align: center;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+}
+.eyebrow{
+  color: var(--text-1);
+  font-size: 1.05rem;
+  margin-bottom: 14px;
+}
+.hero-title{
+  font-size: clamp(2rem, 5vw, 3.4rem);
+  font-weight: 800;
+  line-height: 1.25;
+  max-width: 26ch;
+}
+.hero-title-accent{
+  display:block;
+  white-space: nowrap;
+  font-size: clamp(1.3rem, 6.2vw, 3.4rem);
+  background: linear-gradient(90deg, var(--accent-pink), var(--accent-purple));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero-desc{
+  margin-top: 22px;
+  max-width: 62ch;
+  color: var(--text-1);
+  font-size: 1.02rem;
+}
+
+.hero-avatar{
+  width: min(280px, 62vw);
+  margin: 44px auto 8px;
+}
+.avatar-svg{
+  filter: drop-shadow(0 30px 60px rgba(139,61,240,0.35));
+}
+
+.hero-cta{
+  margin-top: 28px;
+  display:flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.btn{
+  display:inline-flex;
+  align-items:center;
+  gap: 8px;
+  padding: 14px 30px;
+  border-radius: var(--radius-pill);
+  font-weight: 700;
+  font-size: 0.95rem;
+  transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+}
+.btn-outline{
+  border: 1px solid var(--border);
+  color: var(--text-0);
+  background: rgba(255,255,255,0.03);
+}
+.btn-outline:hover{ background: rgba(255,255,255,0.08); }
+.btn-primary{
+  background: linear-gradient(90deg, var(--accent-pink), var(--accent-purple));
+  color: #fff;
+  box-shadow: 0 14px 34px -14px rgba(236,61,154,0.65);
+}
+.btn-primary:hover{ transform: translateY(-2px); box-shadow: 0 18px 40px -14px rgba(236,61,154,0.8); }
+
+/* ===========================================================
+   Services
+=========================================================== */
+.services{
+  position: relative;
+  z-index: 1;
+  padding-block: 72px 40px;
+  text-align: center;
+}
+.section-eyebrow{
+  color: var(--accent-pink);
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+.section-title{
+  font-size: clamp(1.6rem, 3.4vw, 2.3rem);
+  font-weight: 800;
+  margin-bottom: 44px;
+}
+
+.service-grid{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  text-align: right;
+}
+.service-card{
+  border: 1px solid var(--border);
+  background: linear-gradient(160deg, rgba(255,255,255,0.05), rgba(255,255,255,0.015));
+  border-radius: var(--radius-pill);
+  padding: 20px 26px;
+  transition: transform .25s ease, border-color .25s ease, background .25s ease;
+}
+.service-card:hover{
+  transform: translateY(-4px);
+  border-color: rgba(236,61,154,0.5);
+  background: linear-gradient(160deg, rgba(236,61,154,0.12), rgba(139,61,240,0.05));
+}
+.service-card h3{
+  font-size: 1.02rem;
+  font-weight: 700;
+}
+.service-en{
+  margin-top: 4px;
+  font-size: 0.78rem;
+  letter-spacing: 0.03em;
+  color: var(--text-2);
+  direction: ltr;
+  text-align: right;
+}
+
+/* ===========================================================
+   About (short strip, content mirrors PDF's "من أنا" blurb)
+=========================================================== */
+.about{
+  position: relative;
+  z-index: 1;
+  padding-block: 20px 60px;
+  text-align: center;
+}
+.about-text{
+  max-width: 46ch;
+  margin-inline: auto;
+  color: var(--text-1);
+}
+
+/* ===========================================================
+   Tools
+=========================================================== */
+.tools{
+  position: relative;
+  z-index: 1;
+  padding-block: 20px 80px;
+  text-align: center;
+}
+.tools-title{
+  display:inline-block;
+  font-size: 1.15rem;
+  font-weight: 700;
+  padding: 10px 24px;
+  border: 1px dashed rgba(255,255,255,0.35);
+  border-radius: var(--radius-pill);
+  margin-bottom: 34px;
+}
+.tools-row{
+  display:flex;
+  justify-content:center;
+  gap: 22px;
+}
+.tool-badge{
+  width: 58px; height: 58px;
+  border-radius: 16px;
+  display:flex; align-items:center; justify-content:center;
+  font-weight: 800;
+  font-size: 1.1rem;
+  color: #fff;
+}
+.tool-ai{ background: linear-gradient(135deg, #330000, #ff7c00); }
+.tool-canva{ background: linear-gradient(135deg, #00c4cc, #7d2ae8); }
+.tool-ps{ background: linear-gradient(135deg, #001e36, #31a8ff); }
+
+/* Orbit brand mark before footer */
+.brand-orbit{
+  position: relative;
+  z-index: 1;
+  display:flex;
+  justify-content:center;
+  padding-bottom: 60px;
+}
+.brand-orbit svg{
+  padding: 22px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(139,61,240,0.35), transparent 70%);
+}
+
+/* ===========================================================
+   Footer
+=========================================================== */
+.site-footer{
+  position: relative;
+  z-index: 1;
+  border-top: 1px solid var(--border);
+  padding-block: 48px 20px;
+  background: rgba(255,255,255,0.02);
+}
+.footer-inner{
+  display:grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 28px;
+}
+.footer-col h4{
+  font-size: 0.95rem;
+  color: var(--text-1);
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+.freelance-doc{
+  display:flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 0.9rem;
+}
+.freelance-doc span{ color: var(--text-2); }
+.contact-list li, .quick-links li{ margin-bottom: 10px; font-size: 0.9rem; color: var(--text-1); }
+.contact-list a, .quick-links a{ transition: color .2s ease; }
+.contact-list a:hover, .quick-links a:hover{ color: var(--accent-pink); }
+
+.footer-brand{
+  display:flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+}
+.footer-brand p{ font-size: 0.85rem; color: var(--text-2); }
+
+.footer-bottom{
+  text-align: center;
+  margin-top: 40px;
+  padding-top: 18px;
+  border-top: 1px solid var(--border);
+  font-size: 0.8rem;
+  color: var(--text-2);
+}
+
+/* ===========================================================
+   Responsive
+=========================================================== */
+@media (max-width: 860px){
+  .service-grid{ grid-template-columns: repeat(2, 1fr); }
+  .footer-inner{ grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 640px){
+  .nav{
+    position: absolute;
+    top: 100%; right: 0; left: 0;
+    background: var(--bg-1);
+    flex-direction: column;
+    align-items: center;
+    padding: 18px 0;
+    border-bottom: 1px solid var(--border);
+    display: none;
+    gap: 16px;
+  }
+  .nav.open{ display:flex; }
+  .nav-toggle{ display:flex; }
+
+  .service-grid{ grid-template-columns: 1fr; text-align: center; }
+  .service-en{ text-align: center; }
+
+  .footer-inner{ grid-template-columns: 1fr; text-align: center; }
+  .footer-brand{ align-items: center; }
+  .freelance-doc{ align-items: center; }
+}
+
+.logo-img{
+  width: 34px;
+  height: auto;
+}
+.brand-orbit .logo-img{
+  width: 56px;
+  padding: 22px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(139,61,240,0.35), transparent 70%);
+}
+.footer-brand .logo-img{
+  width: 30px;
+}
+
+.brand{
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+.brand .logo-img{
+  max-height: 34px;
+  width: auto;
+  object-fit: contain;
+}
+
+.hero-avatar img.avatar-svg{
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+.btn-icon{
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+}
+.btn-primary .btn-text{
+  letter-spacing: 0.18em;
+}

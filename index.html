@@ -8,7 +8,7 @@
 <link rel="icon" href="assets/logo.png" type="image/png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@500;600;700;800&family=Cairo:wght@700;800&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -24,7 +24,7 @@
     <nav class="nav" id="siteNav">
       <a href="#top">الرئيسية</a>
       <a href="#services">أعمالي</a>
-      <a href="#about">من أنا؟</a>
+      <a href="about.html">من أنا؟</a>
       <a href="#contact">تواصل معي</a>
     </nav>
     <button class="nav-toggle" id="navToggle" aria-label="فتح القائمة" aria-expanded="false">
@@ -34,10 +34,24 @@
 </header>
 
 <main id="top">
-
-  <!-- Hero -->
+  
+<!-- Hero -->
   <section class="hero container">
-    <p class="eyebrow">مرحباً، أنا همس الثبيتي</p>
+    <div class="hero-top">
+      <h2 class="hero-greeting">مرحــــــــباً . أنا همس الثبــــــــــــــــيتي</h2>
+
+      <svg class="hero-arrow" viewBox="0 0 70 130" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <!-- مسار السهم المنحني النحيف -->
+      <path d="M 58 4 C 62 45, 48 85, 14 126" stroke="white" stroke-width="1.3" stroke-linecap="round"/>
+      <!-- رأس السهم الناعم -->
+      <path d="M 8 112 C 10 120, 12 125, 14 126 C 18 124, 25 119, 29 116" stroke="white" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+
+      <div class="hero-avatar" aria-hidden="true">
+        <img src="assets/avatar.png" alt="همس الثبيتي" class="avatar-svg">
+      </div>
+    </div>
+
     <h1 class="hero-title">
       أصمم تجارب
       <span class="hero-title-accent">بصرية تلهم وتحقق أهدافك</span>
@@ -48,13 +62,10 @@
       البوسترات، الانفوجرافيك، المجلات والهويات البصرية.
     </p>
 
-      <div class="hero-avatar">
-    <img src="assets/avatar.png" alt="همس الثبيتي" class="avatar-svg">
-    </div>
     <div class="hero-cta">
-      <a href="#about" class="btn btn-primary">
-      <span class="btn-text">من أنا</span>
-      <img src="assets/pen-icon.png" alt="" class="btn-icon">
+      <a href="about.html" class="btn btn-primary">
+        <span class="btn-text">من أنا</span>
+        <img src="assets/pen-icon.png" alt="" class="btn-icon">
       </a>
       <a href="#services" class="btn btn-outline">استعرض أعمالي</a>
     </div>
@@ -142,7 +153,7 @@
       <ul class="quick-links">
         <li><a href="#top">الرئيسية</a></li>
         <li><a href="#services">أعمالي</a></li>
-        <li><a href="#about">من أنا؟</a></li>
+        <li><a href="about.html">من أنا؟</a></li>
       </ul>
     </div>
 

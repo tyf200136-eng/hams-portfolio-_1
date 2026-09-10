@@ -113,33 +113,87 @@ img,svg{ display:block; max-width: 100%; }
 }
 
 /* ===========================================================
-   Hero
+   Hero (معدّل ليطابق الصورة الأولى)
 =========================================================== */
 .hero{
   position: relative;
   z-index: 1;
-  padding-top: 64px;
-  padding-bottom: 40px;
+  padding-top: 50px;
+  padding-bottom: 50px;
   text-align: center;
-  display:flex;
+  display: flex;
   flex-direction: column;
   align-items: center;
 }
-.eyebrow{
-  color: var(--text-1);
-  font-size: 1.05rem;
-  margin-bottom: 14px;
+
+.hero-top{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
 }
+
+/* التنسيق الجديد للجملة: عريضة، كبيرة، وبارزة */
+/* زيادة المسافة أسفل الجملة ليعطي مساحة كافية للسهم */
+.hero-greeting {
+  font-family: 'Readex Pro', sans-serif;
+  font-size: clamp(1.9rem, 4.3vw, 2.8rem);
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 45px; /* زدنا المسافة هنا ليتنفس السهم */
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* موضع وحجم السهم الجديد */
+.hero-arrow {
+  position: absolute;
+  top: 56px;                    /* يبدأ أسفل النص مباشرة */
+  left: calc(50% + 40px);       /* يقع على يمين كعكة الشعر تماماً */
+  width: 55px;                  /* عرض مناسب ونحيف */
+  height: auto;
+  pointer-events: none;
+  opacity: 0.6;                 /* شفافية ناعمة تعطيه طابع الرسم اليدوي */
+  z-index: 2;
+}
+
+/* الأفاتار */
+.hero-avatar {
+  width: min(300px, 70vw);
+  margin: 0 auto 16px;
+  position: relative;
+}
+
+/* ضبط السهم على شاشات الجوال */
+@media (max-width: 640px) {
+  .hero-greeting {
+    margin-bottom: 35px;
+  }
+  .hero-arrow {
+    top: 45px;
+    left: calc(50% + 25px);
+    width: 42px;
+  }
+}
+
+.avatar-svg{
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 20px 45px rgba(139,61,240,0.4));
+}
+
 .hero-title{
   font-size: clamp(2rem, 5vw, 3.4rem);
   font-weight: 800;
   line-height: 1.25;
   max-width: 26ch;
 }
+
 .hero-title-accent{
-  display:block;
+  display: block;
   white-space: nowrap;
-  font-size: clamp(1.3rem, 6.2vw, 3.4rem);
+  font-size: clamp(1.4rem, 6.2vw, 3.4rem);
   background: linear-gradient(90deg, var(--accent-pink), var(--accent-purple));
   -webkit-background-clip: text;
   background-clip: text;
@@ -147,26 +201,32 @@ img,svg{ display:block; max-width: 100%; }
 }
 
 .hero-desc{
-  margin-top: 22px;
+  margin-top: 20px;
   max-width: 62ch;
   color: var(--text-1);
   font-size: 1.02rem;
-}
-
-.hero-avatar{
-  width: min(280px, 62vw);
-  margin: 44px auto 8px;
-}
-.avatar-svg{
-  filter: drop-shadow(0 30px 60px rgba(139,61,240,0.35));
+  line-height: 1.8;
 }
 
 .hero-cta{
-  margin-top: 28px;
-  display:flex;
+  margin-top: 32px;
+  display: flex;
   gap: 16px;
   flex-wrap: wrap;
   justify-content: center;
+}
+
+/* توافق السهم في الشاشات الصغيرة والجوال */
+@media (max-width: 640px){
+  .hero-greeting {
+    font-size: 1.8rem;
+    margin-bottom: 12px;
+  }
+  .hero-arrow{
+    width: 55px;
+    top: 45px;
+    right: calc(50% - 110px);
+  }
 }
 .btn{
   display:inline-flex;
@@ -423,4 +483,133 @@ img,svg{ display:block; max-width: 100%; }
 }
 .btn-primary .btn-text{
   letter-spacing: 0.18em;
+}
+
+.hero-top{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.hero-arrow{
+  position: absolute;
+  top: 38px;
+  right: calc(50% - 130px);
+  width: 70px;
+  height: auto;
+}
+@media (max-width: 640px){
+  .hero-arrow{
+    width: 50px;
+    top: 30px;
+    right: calc(50% - 95px);
+  }
+}
+
+/* ===== About page ===== */
+.about-hero{
+  padding-top: 60px;
+  text-align: center;
+}
+.pen-icon-big{
+  display: block;
+  width: 44px;
+  height: 44px;
+  margin-inline: auto;
+  margin-bottom: 22px;
+  object-fit: contain;
+}
+.about-title{
+  font-size: clamp(1.5rem, 3.6vw, 2.2rem);
+  font-weight: 800;
+  line-height: 1.5;
+  max-width: 22ch;
+  margin-inline: auto;
+}
+.about-title-accent{
+  display:block;
+  background: linear-gradient(90deg, var(--accent-pink), var(--accent-purple));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.bio{
+  padding-block: 50px;
+  max-width: 760px;
+}
+.bio-p{
+  color: var(--text-1);
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.experience{
+  padding-block: 20px 80px;
+}
+.experience-head{
+  display:flex;
+  align-items:center;
+  justify-content: space-between;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.experience-link{
+  display:flex;
+  align-items:center;
+  gap: 6px;
+  color: var(--text-1);
+  font-size: 0.9rem;
+  transition: color .2s ease;
+}
+.experience-link svg{ transform: scaleX(-1); }
+.experience-link:hover{ color: var(--accent-pink); }
+
+.experience-grid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+.experience-card{
+  position: relative;
+  border: 1px solid var(--border);
+  background: linear-gradient(160deg, rgba(255,255,255,0.05), rgba(255,255,255,0.015));
+  border-radius: var(--radius-md);
+  padding: 26px 20px 20px;
+  text-align: center;
+  transition: transform .25s ease, border-color .25s ease;
+}
+.experience-card:hover{
+  transform: translateY(-4px);
+  border-color: rgba(236,61,154,0.5);
+}
+.experience-num{
+  display:block;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.8rem;
+  color: rgba(255,255,255,0.18);
+  margin-bottom: 10px;
+}
+.experience-card p{
+  color: var(--text-1);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.footer-tagline{
+  font-size: 0.85rem;
+  color: var(--text-2);
+  max-width: 32ch;
+  margin-top: 6px;
+}
+.social-icons{ display:flex; gap: 14px; flex-wrap: wrap; }
+.social-icons li{ margin-bottom: 0; }
+
+@media (max-width: 860px){
+  .experience-grid{ grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 480px){
+  .experience-grid{ grid-template-columns: 1fr; }
 }

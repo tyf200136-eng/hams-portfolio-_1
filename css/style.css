@@ -298,7 +298,8 @@ img,svg{ display:block; max-width: 100%; }
   align-items: center;
   transition: transform .25s ease, border-color .25s ease, background .25s ease;
 }
-.service-card:hover{
+.service-card:hover,
+.service-card:active{
   transform: translateY(-4px);
   border-color: rgba(236,61,154,0.5);
   background: linear-gradient(160deg, rgba(236,61,154,0.12), rgba(139,61,240,0.05));

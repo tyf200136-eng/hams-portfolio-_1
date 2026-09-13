@@ -12,6 +12,73 @@
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+<div class="preloader" id="preloader">
+  <svg class="preloader-svg" width="325" height="170" viewBox="0 0 325 170" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+      <radialGradient id="paint0_radial_47_2" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(13.587 77.1464) rotate(90) scale(13.8173 13.587)">
+        <stop stop-color="#4CC9F0"/>
+        <stop offset="0.475962" stop-color="#4361EE" stop-opacity="0.673077"/>
+        <stop offset="1" stop-color="#320F85" stop-opacity="0"/>
+      </radialGradient>
+      <radialGradient id="paint1_radial_47_2" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(164.393 93.9574) rotate(90) scale(75.995 130.604)">
+        <stop stop-color="#763CAC"/>
+        <stop offset="1" stop-color="#320F85" stop-opacity="0"/>
+      </radialGradient>
+      <radialGradient id="paint2_radial_47_2" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(301.7 124.419) rotate(90) scale(13.8173 13.587)">
+        <stop stop-color="#8400FF"/>
+        <stop offset="0.475962" stop-color="#8400FF"/>
+        <stop offset="1" stop-color="#320F85" stop-opacity="0"/>
+      </radialGradient>
+      <linearGradient id="paint3_linear_47_2" x1="157.713" y1="29.016" x2="157.713" y2="111.92" gradientUnits="userSpaceOnUse">
+        <stop stop-color="#301080" stop-opacity="0.6"/>
+        <stop offset="1" stop-color="#7840AD" stop-opacity="0.36"/>
+      </linearGradient>
+      <linearGradient id="paint4_linear_47_2" x1="164.852" y1="33.1615" x2="164.852" y2="157.056" gradientUnits="userSpaceOnUse">
+        <stop stop-opacity="0"/>
+        <stop offset="0.479167" stop-color="#763CAC"/>
+      </linearGradient>
+      <linearGradient id="paint5_linear_47_2" x1="160.016" y1="0" x2="160.016" y2="126.658" gradientUnits="userSpaceOnUse">
+        <stop offset="0.197917" stop-opacity="0"/>
+        <stop offset="1" stop-color="#763CAC"/>
+      </linearGradient>
+      <linearGradient id="paint6_linear_47_2" x1="159.785" y1="41.9124" x2="159.785" y2="117.447" gradientUnits="userSpaceOnUse">
+        <stop offset="0.197917" stop-opacity="0"/>
+        <stop offset="1" stop-color="#763CAC"/>
+      </linearGradient>
+      <clipPath id="clip0_47_2">
+        <rect width="39" height="67" fill="white" transform="translate(138.213 35.869)"/>
+      </clipPath>
+    </defs>
+
+    <!-- التوهج والحلقات: ثابتة تمامًا -->
+    <ellipse cx="164.393" cy="93.9574" rx="130.604" ry="75.995" fill="url(#paint1_radial_47_2)"/>
+    <circle cx="157.713" cy="70.4678" r="41.4518" fill="url(#paint3_linear_47_2)"/>
+    <path id="orbitPath" d="M164.852 33.6615C209.003 33.6615 248.951 40.589 277.844 51.7719C292.291 57.3638 303.949 64.01 311.986 71.3646C320.023 78.7191 324.401 86.7438 324.401 95.1088C324.401 103.474 320.023 111.498 311.986 118.853C303.949 126.208 292.291 132.854 277.844 138.446C248.951 149.629 209.003 156.556 164.852 156.556C120.701 156.556 80.7518 149.629 51.8594 138.446C37.4118 132.854 25.754 126.208 17.7168 118.853C9.67983 111.498 5.30176 103.474 5.30176 95.1088C5.30181 86.7438 9.67988 78.7191 17.7168 71.3646C25.754 64.0099 37.4118 57.3638 51.8594 51.7719C80.7518 40.589 120.701 33.6615 164.852 33.6615Z" stroke="url(#paint4_linear_47_2)" fill="none"/>
+    <path d="M160.015 0.5C198.709 0.5 229.984 28.6784 229.984 63.3291C229.984 97.9798 198.709 126.158 160.015 126.158C121.322 126.158 90.0476 97.9797 90.0476 63.3291C90.0476 28.6785 121.322 0.500144 160.015 0.5Z" stroke="url(#paint5_linear_47_2)" fill="none"/>
+    <path d="M159.785 42.4124C178.476 42.4124 195.373 46.6255 207.58 53.4114C219.803 60.2067 227.22 69.5148 227.22 79.68C227.22 89.845 219.803 99.1524 207.58 105.948C195.373 112.734 178.476 116.947 159.785 116.947C141.094 116.947 124.197 112.733 111.991 105.948C99.768 99.1524 92.3505 89.8451 92.3503 79.68C92.3503 69.5148 99.7678 60.2067 111.991 53.4114C124.197 46.6255 141.094 42.4125 159.785 42.4124Z" stroke="url(#paint6_linear_47_2)" fill="none"/>
+
+    <!-- الكواكب: تدور فعليًا على خط الحلقة (orbitPath) -->
+    <circle r="12" fill="url(#paint0_radial_47_2)">
+      <animateMotion dur="4s" repeatCount="indefinite" rotate="auto">
+        <mpath href="#orbitPath" xlink:href="#orbitPath"/>
+      </animateMotion>
+    </circle>
+    <circle r="12" fill="url(#paint2_radial_47_2)">
+      <animateMotion dur="4s" begin="-2s" repeatCount="indefinite" rotate="auto">
+        <mpath href="#orbitPath" xlink:href="#orbitPath"/>
+      </animateMotion>
+    </circle>
+
+    <!-- الشعار: يظهر تدريجيًا -->
+    <g class="preloader-logo">
+      <g clip-path="url(#clip0_47_2)">
+        <path d="M170.501 71.9806V57.7939C170.501 53.8603 171.974 50.6748 174.531 48.1727V47.8503H163.789V48.1727C166.345 50.6748 167.819 53.8603 167.819 57.7939V71.9806C167.819 78.1454 164.368 98.987 161.107 102.598V102.869H177.213V102.598C174.014 98.987 170.501 78.1454 170.501 71.9806ZM169.154 53.0865C168.625 51.8742 168.108 51.3325 166.937 50.7908C168.108 50.2492 168.625 49.7075 169.154 48.4694C169.708 49.7075 170.224 50.2492 171.395 50.7908C170.224 51.3325 169.708 51.8742 169.154 53.0865Z" fill="white"/>
+        <path d="M158.311 53.0349V63.2107C160.263 63.3138 161.875 64.8228 161.875 66.6671C161.875 68.5113 160.15 70.1364 158.097 70.1364C156.044 70.1364 154.256 68.4597 154.256 66.6671C154.256 64.7583 155.981 63.1978 158.097 63.1978C158.097 63.1978 158.097 63.1978 158.11 63.1978V53.0994C156.057 57.4715 154.533 64.7841 149.886 66.6542C154.621 68.4984 156.258 76.1722 158.361 80.454C160.401 76.1722 161.535 68.5242 166.257 66.68C161.585 64.797 160.301 57.407 158.298 53.0478" fill="white"/>
+        <path d="M148.388 75.5789V61.0182C148.388 56.9814 149.421 38.7579 151.977 36.2043V35.869H141.235V36.1914C143.792 38.7579 145.706 56.9814 145.706 61.0053V75.566C145.706 81.8855 142.192 86.9025 138.994 90.6168V90.8877H155.1V90.6168C151.901 86.9025 148.388 81.8855 148.388 75.566M147.028 89.2497C146.323 87.7021 145.617 87.0186 144.043 86.3221C145.617 85.6257 146.323 84.9421 147.028 83.3687C147.771 84.9421 148.476 85.6386 150.05 86.3221C148.476 87.0186 147.771 87.7021 147.028 89.2497Z" fill="white"/>
+      </g>
+    </g>
+  </svg>
+</div>
 
 <div class="glow glow-1"></div>
 <div class="glow glow-2"></div>
@@ -67,7 +134,7 @@
         <span class="btn-text">من أنا</span>
         <img src="assets/pen-icon.png" alt="" class="btn-icon">
       </a>
-      <a href="#services" class="btn btn-outline">استعرض أعمالي</a>
+      <a href="works.html" class="btn btn-outline">استعرض أعمالي</a>
     </div>
   </section>
 
@@ -214,13 +281,17 @@
   </section>
 
   <!-- Tools -->
-<section class="tools container">
-  
-  <div class="tools-image-wrap">
-    <img src="assets/tools-row.png" alt="Adobe Illustrator, Canva, Adobe Photoshop" class="tools-image">
-  </div>
-</section>
+  <!-- Tools -->
+  <section class="tools container">
+    <div class="tools-image-wrap">
+      <img src="assets/tools-row.png" alt="Adobe Illustrator, Canva, Adobe Photoshop" class="tools-image">
+    </div>
+  </section>
 
+  <!-- Extra image below tools -->
+  <section class="tools-extra container">
+    <img src="assets/tools-extra.png" alt="" class="tools-extra-image">
+  </section>
 
 </main>
 

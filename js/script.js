@@ -44,3 +44,29 @@ if (initialFilter) {
   const matchBtn = document.querySelector(`.filter-btn[data-filter="${initialFilter}"]`);
   if (matchBtn) matchBtn.click();
 }
+// Preloader: show once per browser session, or again on manual refresh
+(function(){
+  const preloader = document.getElementById('preloader');
+  if (!preloader) return;
+
+  const navEntries = performance.getEntriesByType('navigation');
+  const isReload = navEntries.length > 0 && navEntries[0].type === 'reload';
+  const alreadyShown = sessionStorage.getItem('preloaderShown') === '1';
+
+  // إذا سبق وظهرت هذي الجلسة، وما كان تحديث (F5)، نشيلها فورًا بدون أنيميشن
+  if (alreadyShown && !isReload) {
+    preloader.remove();
+    return;
+  }
+
+  sessionStorage.setItem('preloaderShown', '1');
+  document.body.style.overflow = 'hidden';
+
+  window.addEventListener('load', () => {
+    setTimeout(() => {
+      preloader.classList.add('hide');
+      document.body.style.overflow = '';
+      setTimeout(() => preloader.remove(), 700);
+    }, 2600);
+  });
+})();

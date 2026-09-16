@@ -298,7 +298,13 @@ img,svg{ display:block; max-width: 100%; }
   align-items: center;
   transition: transform .25s ease, border-color .25s ease, background .25s ease;
 }
-.service-card:hover,
+@media (hover: hover){
+  .service-card:hover{
+    transform: translateY(-4px);
+    border-color: rgba(236,61,154,0.5);
+    background: linear-gradient(160deg, rgba(236,61,154,0.12), rgba(139,61,240,0.05));
+  }
+}
 .service-card:active{
   transform: translateY(-4px);
   border-color: rgba(236,61,154,0.5);
@@ -383,7 +389,12 @@ img,svg{ display:block; max-width: 100%; }
   padding: 14px 16px 22px;
   transition: transform .25s ease, border-color .25s ease;
 }
-.featured-card:hover,
+@media (hover: hover){
+  .featured-card:hover{
+    transform: translateY(-4px);
+    border-color: rgba(236,61,154,0.4);
+  }
+}
 .featured-card:active{
   transform: translateY(-4px);
   border-color: rgba(236,61,154,0.4);
@@ -652,7 +663,12 @@ img,svg{ display:block; max-width: 100%; }
   text-align: center;
   transition: transform .25s ease, border-color .25s ease;
 }
-.experience-card:hover,
+@media (hover: hover){
+  .experience-card:hover{
+    transform: translateY(-4px);
+    border-color: rgba(236,61,154,0.5);
+  }
+}
 .experience-card:active{
   transform: translateY(-4px);
   border-color: rgba(236,61,154,0.5);
@@ -748,7 +764,12 @@ img,svg{ display:block; max-width: 100%; }
   padding: 14px 14px 32px;
   transition: transform .25s ease, border-color .25s ease;
 }
-.project-card:hover,
+@media (hover: hover){
+  .project-card:hover{
+    transform: translateY(-4px);
+    border-color: rgba(236,61,154,0.4);
+  }
+}
 .project-card:active{
   transform: translateY(-4px);
   border-color: rgba(236,61,154,0.4);

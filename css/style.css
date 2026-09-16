@@ -381,6 +381,12 @@ img,svg{ display:block; max-width: 100%; }
   background: linear-gradient(160deg, rgba(255,255,255,0.04), rgba(255,255,255,0.01));
   border-radius: var(--radius-lg);
   padding: 14px 16px 22px;
+  transition: transform .25s ease, border-color .25s ease;
+}
+.featured-card:hover,
+.featured-card:active{
+  transform: translateY(-4px);
+  border-color: rgba(236,61,154,0.4);
 }
 .featured-thumb-single{
   aspect-ratio: 4 / 3;
@@ -646,7 +652,8 @@ img,svg{ display:block; max-width: 100%; }
   text-align: center;
   transition: transform .25s ease, border-color .25s ease;
 }
-.experience-card:hover{
+.experience-card:hover,
+.experience-card:active{
   transform: translateY(-4px);
   border-color: rgba(236,61,154,0.5);
 }
